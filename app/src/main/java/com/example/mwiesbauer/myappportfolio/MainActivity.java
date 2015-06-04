@@ -15,17 +15,11 @@ public class MainActivity extends Activity {
 
     public void sendMessgage(View view) {
 
-        System.out.println(view.getId());
-
-
         Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
 
         Button btn = (Button)view;
         String btnText = "This button will launch " + btn.getText().toString();
-
-        CharSequence text = "text";
-        int duration = Toast.LENGTH_SHORT;
-
 
         Toast toast = Toast.makeText(context, btnText, duration);
         toast.show();
