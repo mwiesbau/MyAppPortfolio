@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+    private static Toast toast;
 
     public void sendMessgage(View view) {
 
@@ -21,7 +22,12 @@ public class MainActivity extends Activity {
         Button btn = (Button)view;
         String btnText = "This button will launch " + btn.getText().toString();
 
-        Toast toast = Toast.makeText(context, btnText, duration);
+        // CANCEL EXISTING TOAST
+        if (toast != null) {
+            toast.cancel();
+        }
+
+        toast = Toast.makeText(context, btnText, duration);
         toast.show();
     }
 
